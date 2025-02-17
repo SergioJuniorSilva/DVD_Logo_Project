@@ -12,8 +12,8 @@ public class Main extends ApplicationAdapter {
     private SpriteBatch batch;
     private Texture image;
 
-    private int positionX = 0;
-    private int positionY = 0;
+    private int positionX = 90;
+    private int positionY = 30;
 
     private int velocityX = 1;
     private int velocityY = 1;
