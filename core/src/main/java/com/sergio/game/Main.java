@@ -12,16 +12,22 @@ public class Main extends ApplicationAdapter {
     private SpriteBatch batch;
     private Texture image;
 
-    private int positionX = 90;
-    private int positionY = 30;
+    private int positionX = 0;
+    private int positionY = 0;
 
     private int velocityX = 1;
     private int velocityY = 1;
 
+    private float red = 0.25f;
+    private float green = 0.50f;
+    private float blue = 0.75f;
+
+    private boolean colorup = true;
+
 
     //private int velocity = 1;
 
-   //private boolean isgoingup = true;
+    //private boolean isgoingup = true;
     //private boolean isgoingright = true;
 
     private int upperboundary = 480 - 44;
@@ -36,13 +42,36 @@ public class Main extends ApplicationAdapter {
 
     @Override
     public void render() {
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+        ScreenUtils.clear(red, green, blue, 1f);
         batch.begin();
         batch.draw(image, positionX, positionY);
         batch.end();
 
         positionX = positionX + velocityX;
 
+        //red = red + 0.001f;
+
+        if(colorup){
+            red = red + 0.01f;
+        }
+        else{
+            red = red - 0.01f;
+        }
+        if(red >= 1){
+            colorup = false;
+        }
+        if(red <=0 ){
+            colorup = true;
+        }
+
+        /*if(red <= 0){
+            red = red + 0.01f;
+        }
+
+        if(red >= 100f){
+            red = red - 0.01f;
+        }
+         */
         /*if (isgoingright){
             positionX = positionX + velocityX;
         }
