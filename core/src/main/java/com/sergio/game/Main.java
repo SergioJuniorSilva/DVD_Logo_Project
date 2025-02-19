@@ -22,7 +22,9 @@ public class Main extends ApplicationAdapter {
     private float green = 0.50f;
     private float blue = 0.75f;
 
-    private boolean colorup = true;
+    private boolean redrup = true;
+    private boolean greenup = true;
+    private boolean blueup = true;
 
 
     //private int velocity = 1;
@@ -51,17 +53,44 @@ public class Main extends ApplicationAdapter {
 
         //red = red + 0.001f;
 
-        if(colorup){
-            red = red + 0.01f;
+        if(redrup){
+            red = red + 0.001f;
         }
         else{
-            red = red - 0.01f;
+            red = red - 0.001f;
         }
         if(red >= 1){
-            colorup = false;
+            redrup = false;
         }
-        if(red <=0 ){
-            colorup = true;
+        if(red <= 0 ){
+            redrup = true;
+        }
+
+
+        if(greenup){
+            green = green + 0.001f;
+        }
+        else{
+            green = green - 0.001f;
+        }
+        if(green >= 1){
+            greenup = false;
+        }
+        if(green <= 0 ){
+            greenup = true;
+        }
+
+        if(blueup){
+            blue = blue + 0.001f;
+        }
+        else{
+            blue = blue - 0.001f;
+        }
+        if(blue >= 1){
+            blueup = false;
+        }
+        if(blue <= 0 ){
+            blueup = true;
         }
 
         /*if(red <= 0){
@@ -71,7 +100,7 @@ public class Main extends ApplicationAdapter {
         if(red >= 100f){
             red = red - 0.01f;
         }
-         */
+
         /*if (isgoingright){
             positionX = positionX + velocityX;
         }
